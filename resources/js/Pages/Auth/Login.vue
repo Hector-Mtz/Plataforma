@@ -29,9 +29,10 @@ const submit = () => {
 };
 </script>
 
-<template>
-    <Head title="Log in" />
 
+<template>
+
+    <Head title="Log in" />
     <AuthenticationCard>
         <template #logo>
             <AuthenticationCardLogo />
@@ -43,7 +44,7 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <div>
-                <InputLabel for="email" value="Email" />
+                <InputLabel for="email" value="Correo electronico" />
                 <TextInput
                     id="email"
                     v-model="form.email"
@@ -56,7 +57,7 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+                <InputLabel for="password" value="Contraseña" />
                 <TextInput
                     id="password"
                     v-model="form.password"
@@ -76,12 +77,12 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    Forgot your password?
+                <Link  :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
+                    ¡Olvidaste tu contraseña?
                 </Link>
 
                 <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Log in
+                    Ingresar
                 </PrimaryButton>
             </div>
         </form>
