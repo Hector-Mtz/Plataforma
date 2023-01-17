@@ -7,6 +7,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+import Particles from '@/Components/Particles.vue';
 
 const form = useForm({
     name: '',
@@ -25,7 +26,7 @@ const submit = () => {
 
 <template>
     <Head title="Register" />
-
+    <Particles></Particles>
     <AuthenticationCard>
         <template #logo>
             <AuthenticationCardLogo />
