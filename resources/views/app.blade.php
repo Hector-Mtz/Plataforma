@@ -9,12 +9,17 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
-        <!-- Scripts -->
+        <!-- Scripts 
+        <script src="{{ asset('assets/particles.min.js')}}"></script>
+        <script src="{{ asset('assets/particles_function.js')}}"></script>
+        -->
+
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
         @inertia
+       <!-- <div id="particles-js"></div> -->
     </body>
 </html>
