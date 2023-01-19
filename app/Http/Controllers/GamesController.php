@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\games;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class GamesController extends Controller
 {
@@ -15,6 +16,20 @@ class GamesController extends Controller
     public function index()
     {
         //
+  
+
+    }
+
+
+    public function MffIndex()
+    {
+        return Inertia::render('MFF/Mff.Index', [ ]);
+    }
+
+
+    public function SevenIndex()
+    {
+        return Inertia::render('MFF/Mff.Index', [ ]);
     }
 
     /**

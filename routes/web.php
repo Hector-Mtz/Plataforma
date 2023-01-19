@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GamesController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -33,3 +34,12 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+
+Route::controller(GamesController::class)->group(
+    function()
+    {
+        Route::get('/mffIndex','MffIndex')->name('mffIndex');
+        Route::get('/SevenIndex','SevenIndex')->name('7dsIndex');
+    }
+);
