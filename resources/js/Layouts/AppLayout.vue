@@ -52,13 +52,26 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     <p class="text-white">Inicio</p>
                                 </NavLink>
-                                <NavLink class="text-white" :href="route('mffIndex')" :active="route().current('mffIndex')">
-                                    Marvel Future Fight
-                                </NavLink>
-                                <NavLink class="text-white" :href="route('7dsIndex')" :active="route().current('7dsIndex')">
-                                    The Seven Deadly Sins: Grand Cross
-                                </NavLink>
-                                
+                                 <Dropdown align="right" width="48">
+                                    <template #trigger>
+                                        <span class="inline-flex rounded-md">
+                                            <button type="button" class="inline-flex mt-4 text-white items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md hover:text-red focus:outline-none focus: active: transition">
+                                               Marvel Future Fight
+                                            </button>
+                                        </span>
+                                    </template>
+                                    <template #content>
+                                        <dropdown-link>
+                                            Equipaciones
+                                        </dropdown-link>
+                                         <dropdown-link>
+                                            Cromos
+                                        </dropdown-link>
+                                         <dropdown-link>
+                                            ABX Teams
+                                        </dropdown-link>
+                                    </template>
+                                </Dropdown>                                
                             </div>
                         </div>
 
@@ -297,14 +310,26 @@ const logout = () => {
                     <div class="md:flex md:flex-wrap md:-mx-4 py-6 md:pb-12">
                 
                       <div class="footer-info lg:w-1/3 md:px-4">
-                        <h4 class="text-white text-2xl mb-4">Guias, equipaciones, videos, informaciòn para tu apoyo</h4>
-                        <p class="text-gray-400">We have carefully crafted the blocks to suit to everyone's need.</p>
+                        <h4 class="text-white text-2xl mb-4">Guias, equipaciones, videos, imagenes e informaciòn para tu apoyo</h4>
+                        <p class="text-gray-400">Actualizaciones constantes que necesitas conocer.</p>
+                        <div class="flex flex-col md:flex-row"> <!--Redes sociales -->
+                              <div class="basis-1/6">
+                                <svg class="w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="fill:white">
+                                  <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/>
+                                </svg>
+                              </div>
+                              <div class="basis-1/6">
+                                <svg class="w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill:white">
+                                  <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+                                </svg>
+                              </div>
+                        </div>
                         <div class="mt-4">
                           <button class="bg-facebook py-2 px-4 text-white rounded mt-2 transition-colors duration-300">
                             <span class="fab fa-facebook-f mr-2"></span> Follow
                           </button>
                           <button class="bg-twitter py-2 px-4 text-white rounded ml-2 mt-2 transition-colors duration-300">
-                            <span class="fab fa-twitter mr-2"></span> Follow @freeweb19
+                            <span class="fab fa-twitter mr-2"></span> Sigueme en Twitter @hh_mm01
                           </button>
                         </div>
                       </div>
@@ -312,7 +337,7 @@ const logout = () => {
                       <div class="md:w-2/3 lg:w-1/3 md:px-4 xl:pl-16 mt-12 lg:mt-0">
                         <div class="sm:flex">
                           <div class="sm:flex-1">
-                            <h6 class="text-base font-medium text-white uppercase mb-2">About</h6>
+                            <h6 class="text-base font-medium text-white uppercase mb-2">Autores</h6>
                             <div>
                               <a href="#" class="text-gray-400 py-1 block hover:underline">Company</a>
                               <a href="#" class="text-gray-400 py-1 block hover:underline">Culture</a>
@@ -321,7 +346,7 @@ const logout = () => {
                             </div>
                           </div>
                           <div class="sm:flex-1 mt-4 sm:mt-0">
-                            <h6 class="text-base font-medium text-white uppercase mb-2">What we offer</h6>
+                            <h6 class="text-base font-medium text-white uppercase mb-2">¿Qué se ofrece?</h6>
                             <div>
                               <a href="#" class="text-gray-400 py-1 block hover:underline">Blocks</a>
                               <a href="#" class="text-gray-400 py-1 block hover:underline">Resources</a>
@@ -350,8 +375,8 @@ const logout = () => {
                           <p class="text-white">&copy; <strong>HHMM</strong></p>
                         </div>
                         <div class="md:flex-1 md:px-4 text-center md:text-right">
-                          <a href="#" class="py-2 px-4 text-white inline-block hover:underline">Terms of Service</a>
-                          <a href="#" class="py-2 px-4 text-white inline-block hover:underline">Privacy Policy</a>
+                          <a href="#" class="py-2 px-4 text-white inline-block hover:underline"></a>
+                          <a href="#" class="py-2 px-4 text-white inline-block hover:underline"></a>
                         </div>
                       </div>
                     </div>

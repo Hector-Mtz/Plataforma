@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 #particles-js{
-    background-color: #403272;
+    background-color: #2A3A52;
     position:fixed;
     z-index: -1;
     top:0;

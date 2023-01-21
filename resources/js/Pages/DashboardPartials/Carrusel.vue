@@ -45,6 +45,9 @@ import 'swiper/css/effect-fade';
     @slideChange="onSlideChange"
   >
     <swiper-slide>
+         <div>
+            <h1 class="absolute">Marvel Future Fight</h1>
+         </div>
         <img class="w-screen" src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/hc_1440x810/public/media/image/2017/04/marvel-future-fight_9.jpg?itok=AvLMbUwV">
     </swiper-slide>
     <swiper-slide>
