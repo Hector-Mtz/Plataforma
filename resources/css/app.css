@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    --fuentePrincipal: 'Montserrat' !important;
+}
 #particles-js{
     background-color: #2A3A52;
     position:fixed;

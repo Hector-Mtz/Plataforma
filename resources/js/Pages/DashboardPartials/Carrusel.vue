@@ -45,13 +45,24 @@ import 'swiper/css/effect-fade';
     @slideChange="onSlideChange"
   >
     <swiper-slide>
-         <div>
-            <h1 class="absolute">Marvel Future Fight</h1>
-         </div>
-        <img class="w-screen" src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/hc_1440x810/public/media/image/2017/04/marvel-future-fight_9.jpg?itok=AvLMbUwV">
+      <div class="relative inline-block text-center" style="font-family:'Montserrat;">
+        <img class="w-screen rounded-xl" src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/hc_1440x810/public/media/image/2017/04/marvel-future-fight_9.jpg?itok=AvLMbUwV">
+        <div class=" absolute top-1/2 bg-gray-700 bg-opacity-70">
+          <h1 class="top-1/6 pt-8 text-left ml-6 font-extrabold text-4xl text-white">Marvel Future Fight</h1>
+          <p class="text-white text-left ml-6 mt-4 font-semibold">Marvel Future Fight es un videojuego móvil con temática de superhéroes desarrollado por Netmarble Monster y publicado por Netmarble Games, y está afiliado directamente con Marvel Entertainment bajo Disney, disponible con muchos uniformes de superhéroes y supervillanos con sus detalles</p>
+          <div class="w-full h-48 bg-gray-700 p-3 opacity-10"></div>
+        </div>
+      </div>
     </swiper-slide>
     <swiper-slide>
-        <img class="w-screen" src="https://i.ytimg.com/vi/-LTuziS6hiQ/maxresdefault.jpg">
+      <div class="relative inline-block text-center" style="font-family:'Montserrat;">
+        <img class="w-screen rounded-xl" src="https://i.ytimg.com/vi/-LTuziS6hiQ/maxresdefault.jpg">
+        <div class=" absolute top-1/2 bg-gray-700 bg-opacity-70">
+          <h1 class="top-1/6 pt-8 text-left ml-6 font-extrabold text-4xl text-white">The Seven Deadly Sins: Grand Cross</h1>
+          <p class="text-white text-left ml-6 mt-4 font-semibold">The Seven Deadly Sins: Grand Cross es un excelente juego de rol en el que viviremos la historia original del popular manga creado por Nakaba Suzuki. Un RPG de cartas que cuenta con un apartado visual fantástico que nos meterá de lleno en el mundo de The Seven Deadly Sins (Nanatsu no Taizai).</p>
+          <div class="w-full h-48 bg-gray-700 p-3 opacity-10"></div>
+        </div>
+      </div>
     </swiper-slide>
   </swiper>
 </template>
