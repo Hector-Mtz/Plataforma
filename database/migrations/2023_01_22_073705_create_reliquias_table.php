@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('reliquias', function (Blueprint $table) {
             $table->id();
-            $table->string('games_name');
-            $table->string('logo');
-            $table->string('imagen_ilustrativa');
+            $table->string('nombre');
             $table->string('descripcion');
-            $table->boolean('activo');
+            $table->string('imagen');
+            $table->string('stat_1');
+            $table->string('stat_2');
+            $table->string('stat_3');
+            $table->string('materiales_creacion_img')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('reliquias');
     }
 };

@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('artefacto_stats', function (Blueprint $table) {
             $table->id();
-            $table->string('games_name');
-            $table->string('logo');
-            $table->string('imagen_ilustrativa');
+            $table->string('aumento_instinto');
             $table->string('descripcion');
-            $table->boolean('activo');
+            $table->string('imagen');
+            $table->foreignId('pasiva_id')->nullable()->constrained('artefacto_pasivas');
+            $table->foreignId('instinto_id')->constrained('instintos');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('artefacto_stats');
     }
 };
