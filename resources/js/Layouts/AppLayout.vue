@@ -63,7 +63,7 @@ const logout = () => {
                                         </span>
                                     </template>
                                     <template #content>
-                                        <dropdown-link>
+                                        <dropdown-link :href="route('mff.characters')">
                                             Equipaciones
                                         </dropdown-link>
                                          <dropdown-link>

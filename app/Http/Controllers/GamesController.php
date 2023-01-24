@@ -21,9 +21,12 @@ class GamesController extends Controller
     }
 
 
-    public function MffIndex()
+    public function charactersIndex()
     {
-        return Inertia::render('MFF/Mff.Index', [ ]);
+        
+        return Inertia::render('MFF/Personajes', [ 
+
+        ]);
     }
 
 

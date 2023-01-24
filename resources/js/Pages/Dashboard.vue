@@ -2,9 +2,13 @@
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Carrusel from  '../Pages/DashboardPartials/Carrusel.vue';
 import Particles from '@/Components/Particles.vue';
+import { usePage } from '@inertiajs/inertia-vue3';
+
+const user = usePage().props.value.user;
 </script>
 
 <template>
+
     <Particles></Particles>
     <AppLayout title="Inicio">
         <div class="py-12">

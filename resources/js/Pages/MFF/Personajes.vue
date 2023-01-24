@@ -1,15 +1,18 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-
+var props = defineProps({
+    
+});
 
 </script>
 
 <template>
-    <AppLayout title="Inicio">
+    <AppLayout title="Personajes">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Inicio
+                Personajes
             </h2>
+            
         </template>
 
         <div class="py-12">

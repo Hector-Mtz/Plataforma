@@ -27,6 +27,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'rol_id'
     ];
 
     /**
@@ -41,6 +42,7 @@ class User extends Authenticatable
         'two_factor_secret',
     ];
 
+    
     /**
      * The attributes that should be cast.
      *
@@ -57,5 +59,53 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
+        'is_admin',
+        'cans'
     ];
+
+    
+    public function getIsAdminAttribute()
+    {
+        return $this->rol_id === 1; //obtenemos si es admin
+    }
+
+    public function role ()
+    {
+        return $this->belongsTo(Role::class,'role_id');//declaramos que un usuario solo tenga un rol
+    }
+
+    public function getCansAttribute() //definimos la lista de lo que pueden realizar
+    {
+      $cans = array(); //definimos el array de cans 
+      if($this->is_admin) //con el attributo que definimos arriba comprobamos si es admin
+      {
+         $permissions = Permission::select('id','nombre')->get;//seleccionamos todos los permissos si es admin
+      }
+      else //sino es admin
+      {
+        //$permissions = $this->role->permissions(); //seleccionamos los permisos por ese rol
+         $permissions = RolesPermission::select('permissions.id','permissions.nombre')
+         ->join('permissions','roles_permissions.permission_id','permissions.id')
+         ->where('roles_permissions.role_id','=', $this->rol_id)
+         ->get();
+         //return $permissions;
+      }
+
+      //recorremos el arreglo de cans y lo retornamos
+      foreach ($permissions as $permission) 
+      {
+        $cans[$permission->nombre] =  $this->can($permission->nombre);
+      }
+      return $cans;
+    }
+
+    public function hasPermission($idPermission) //declaramos una funcion para saber si tiene permiso o no
+    {
+       //return $this->role->permissions()->where('permissions.id', $idPermission)->exists();
+       RolesPermission::select('permissions.id','permissions.nombre')
+         ->join('permissions','roles_permissions.permission_id','permissions.id')
+         ->where('roles_permissions.role_id','=', $this->rol_id)
+         ->get();
+    }
+
 }

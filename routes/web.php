@@ -39,7 +39,6 @@ Route::middleware([
 Route::controller(GamesController::class)->group(
     function()
     {
-        Route::get('/mffIndex','MffIndex')->name('mffIndex');
-        Route::get('/SevenIndex','SevenIndex')->name('7dsIndex');
+        Route::get('/mff/characters','charactersIndex')->name('mff.characters');
     }
 );
