@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\games;
+use App\Models\Instinto;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -23,16 +24,17 @@ class GamesController extends Controller
 
     public function charactersIndex()
     {
+       $instintos =  Instinto::all();
         
         return Inertia::render('MFF/Personajes', [ 
-
+           'instintos' => $instintos
         ]);
     }
 
 
     public function SevenIndex()
     {
-        return Inertia::render('MFF/Mff.Index', [ ]);
+        
     }
 
     /**

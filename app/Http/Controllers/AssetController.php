@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Asset;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AssetController extends Controller
 {
@@ -36,6 +37,11 @@ class AssetController extends Controller
     public function store(Request $request)
     {
         //
+        $asset = request('imagen');
+        $nombre =  $asset->getClientOriginalName();//rescatamos el nombre original
+        $ruta_asset = $asset->storeAs('assets', $nombre, 'gcs'); //guardamos el archivo en el storage
+        $urlNoticia = Storage::disk('gcs')->url($ruta_asset);
+        return $urlNoticia;
     }
 
     /**

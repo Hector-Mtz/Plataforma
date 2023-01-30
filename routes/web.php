@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AssetController;
 use App\Http\Controllers\GamesController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -40,5 +41,13 @@ Route::controller(GamesController::class)->group(
     function()
     {
         Route::get('/mff/characters','charactersIndex')->name('mff.characters');
+    }
+);
+
+
+Route::controller(AssetController::class)->group(
+    function()
+    {
+        Route::post('/asset/store','store')->name('asset.store');
     }
 );
